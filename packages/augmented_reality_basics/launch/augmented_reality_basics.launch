@@ -1,0 +1,11 @@
+<launch>
+    <group ns="$(arg veh)">
+
+        <remap from="/robot_name/camera_node/image/compressed" to="/$(arg veh)/camera_node/image/compressed"/>
+        <remap from="/robot_name/camera_node/camera_info" to="/$(arg veh)/camera_node/camera_info"/>
+
+        <!-- <remap from="~basename/image/compressed" to="/$(arg veh)/augmented_reality_basics_node/hud/image/compressed"/>-->
+        <node pkg="augmented_reality_basics" type="augmented_reality_basics_node.py" name="augmented_reality_basics_node" output="screen"/>
+
+    </group>
+</launch>
